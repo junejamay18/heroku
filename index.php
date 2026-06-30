@@ -1127,5 +1127,8 @@
             }
         }
     </script>
+        <?php
+
+?>
 </body>
 </html>
