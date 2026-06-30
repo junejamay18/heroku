@@ -883,7 +883,7 @@
         <div class="footer-legal-bar">
             <div>&copy; 2026 AeroGrid Kinetics LLC. Core Matrix Operational.</div>
             <div class="footer-policy-links">
-                <a href="about.html" style="text-decoration: none;">About us</a>
+                <a href="about.php" style="text-decoration: none;">About us</a>
                 <button onclick="togglePolicyModal('privacy')">Privacy Policy</button>
                 <button onclick="togglePolicyModal('terms')">Terms of Service</button>
             </div>
