@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroGrid Kinetics // Techwear Apparel & Modular Urban Gear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --slate-base: #121416;
+            --slate-card: #1a1d20;
+            --charcoal-main: #0a0b0c;
+            --charcoal-muted: #2d3238;
+            --volt-accent: #dcf82d;
+            --volt-hover: #c4de1a;
+            --text-main: #f1f3f5;
+            --text-muted: #adb5bd;
+            --border-clean: #343a40;
+            --max-width: 1400px;
+            --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--slate-base);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- COMPLIANCE ANNOUNCEMENT STRIP --- */
+        .compliance-strip {
+            background-color: var(--charcoal-main);
+            color: var(--volt-accent);
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 10px 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--border-clean);
+        }
+
+        /* --- STICKY NAVIGATION HEADER --- */
+        header {
+            background: rgba(18, 20, 22, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-clean);
+        }
+
+        .header-chassis {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            gap: 20px;
+        }
+
+        .brand-logo {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            color: var(--volt-accent);
+        }
+
+        /* SEARCH PIPELINE BRACKET */
+        .search-bracket {
+            display: flex;
+            flex-grow: 1;
+            max-width: 500px;
+            height: 44px;
+            border-radius: 4px;
+            border: 1px solid var(--border-clean);
+            background: var(--slate-card);
+            padding: 0 6px 0 16px;
+            align-items: center;
+            transition: var(--transition-smooth);
+        }
+
+        .search-bracket:focus-within {
+            border-color: var(--volt-accent);
+        }
+
+        .search-bracket input {
+            flex-grow: 1;
+            border: none;
+            font-size: 0.9rem;
+            outline: none;
+            color: var(--text-main);
+            background: transparent;
+        }
+
+        .search-execution-btn {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-execution-btn:hover {
+            color: var(--volt-accent);
+        }
+
+        /* BAG TOGGLE HUB */
+        .bag-trigger-btn {
+            cursor: pointer;
+            padding: 10px 18px;
+            background: var(--slate-card);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid var(--border-clean);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .bag-trigger-btn:hover {
+            border-color: var(--volt-accent);
+            color: var(--volt-accent);
+        }
+
+        .bag-counter-badge {
+            background: var(--volt-accent);
+            color: var(--charcoal-main);
+            font-size: 0.75rem;
+            font-weight: 800;
+            border-radius: 2px;
+            padding: 2px 6px;
+        }
+
+        /* --- HERO JUMBOTRON --- */
+        .hero-jumbotron {
+            max-width: var(--max-width);
+            margin: 24px auto;
+            border-radius: 4px;
+            background-color: var(--slate-card);
+            background-image: linear-gradient(to right, rgba(26,29,32,0.95) 40%, rgba(26,29,32,0.4)), url('https://images.unsplash.com/photo-1508962914676-134849a727f0?w=1400&auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 60px;
+            border: 1px solid var(--border-clean);
+        }
+
+        .hero-statement h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--text-main);
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-statement p {
+            font-size: 1.05rem;
+            margin-bottom: 24px;
+            color: var(--text-muted);
+            max-width: 500px;
+        }
+
+        /* --- SHOWROOM ARCHITECTURE --- */
+        .showroom-matrix {
+            max-width: var(--max-width);
+            margin: 30px auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 30px;
+        }
+
+        .top-utility-shelf {
+            grid-column: 1 / -1;
+            background: var(--slate-card);
+            padding: 14px 24px;
+            border-radius: 4px;
+            border: 1px solid var(--border-clean);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .index-counter-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        select {
+            padding: 8px 16px;
+            border: 1px solid var(--border-clean);
+            border-radius: 4px;
+            background-color: var(--slate-base);
+            font-size: 0.85rem;
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: var(--volt-accent);
+        }
+
+        /* CATEGORY SIDEBAR */
+        .filter-sidebar h3 {
+            font-size: 0.8rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .checkbox-row input {
+            margin-right: 12px;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--volt-accent);
+        }
+
+        /* SHOWROOM GRID CONTAINER */
+        .showroom-grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .item-card {
+            background: var(--slate-card);
+            border: 1px solid var(--border-clean);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .item-card:hover {
+            border-color: var(--volt-accent);
+        }
+
+        .media-box {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: var(--slate-base);
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .media-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .ribbon-tag {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--volt-accent);
+            color: var(--charcoal-main);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .item-category {
+            font-size: 0.7rem;
+            color: var(--volt-accent);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .item-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .item-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-clean);
+        }
+
+        .price-text {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .btn-action {
+            background: var(--slate-base);
+            color: var(--text-main);
+            padding: 10px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 1px solid var(--border-clean);
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-action:hover {
+            background: var(--volt-accent);
+            border-color: var(--volt-accent);
+            color: var(--charcoal-main);
+        }
+
+        /* --- SLIDING ORDER CART DRAWER & MODALS --- */
+        .drawer-overlay-mask, .modal-lightbox-chassis, .policy-overlay-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            display: none;
+        }
+
+        .sliding-cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -460px;
+            width: 100%;
+            max-width: 440px;
+            height: 100%;
+            background: var(--slate-card);
+            border-left: 1px solid var(--border-clean);
+            z-index: 2001;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sliding-cart-drawer.active {
+            right: 0;
+        }
+
+        .drawer-top-bar {
+            padding: 24px;
+            border-bottom: 1px solid var(--border-clean);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--charcoal-main);
+        }
+
+        .drawer-dismiss-btn {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            line-height: 1;
+        }
+
+        .drawer-dismiss-btn:hover {
+            color: var(--volt-accent);
+        }
+
+        .drawer-scroll-body {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        /* --- FORM CHECKOUT ELEMENTS --- */
+        .checkout-identity-form {
+            display: none;
+            margin-top: 10px;
+            padding-top: 20px;
+            border-top: 2px dashed var(--border-clean);
+        }
+
+        .checkout-identity-form.active {
+            display: block;
+        }
+
+        .form-section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--volt-accent);
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .form-row-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .input-group {
+            margin-bottom: 14px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: var(--slate-base);
+            border: 1px solid var(--border-clean);
+            border-radius: 4px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .input-group input:focus {
+            border-color: var(--volt-accent);
+        }
+
+        .ledger-line-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-clean);
+            align-items: center;
+        }
+
+        .ledger-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--slate-base);
+            border: 1px solid var(--border-clean);
+        }
+
+        .ledger-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ledger-info-block {
+            flex-grow: 1;
+        }
+
+        .ledger-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .ledger-cost {
+            font-size: 0.85rem;
+            color: var(--volt-accent);
+            font-weight: 700;
+        }
+
+        .ledger-remove-action {
+            background: none;
+            border: none;
+            color: #ff6b6b;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .drawer-footer-block {
+            padding: 24px;
+            border-top: 1px solid var(--border-clean);
+            background: var(--charcoal-main);
+        }
+
+        .total-summary-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* --- QUICK VIEW SYSTEM MODALS --- */
+        .modal-lightbox-chassis {
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .modal-inner-vault {
+            background: var(--slate-card);
+            border: 1px solid var(--border-clean);
+            max-width: 640px;
+            width: 100%;
+            border-radius: 4px;
+            position: relative;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .modal-top-bar {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-clean);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--charcoal-main);
+        }
+
+        .modal-scroll-area {
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .asymmetric-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .modal-visual-frame {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--slate-base);
+            border-radius: 4px;
+            overflow: hidden;
+            height: 260px;
+            border: 1px solid var(--border-clean);
+        }
+
+        .modal-visual-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- COMPLIANCE POLICY MODAL --- */
+        .policy-overlay-mask {
+            z-index: 4000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .policy-modal-box {
+            background: var(--slate-card);
+            max-width: 800px;
+            width: 100%;
+            max-height: 80vh;
+            border-radius: 4px;
+            border: 1px solid var(--border-clean);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .policy-body-scroll {
+            padding: 30px;
+            overflow-y: auto;
+            color: var(--text-main);
+        }
+
+        .policy-body-scroll h2 { border-bottom: 2px solid var(--volt-accent); padding-bottom: 8px; margin-bottom: 16px; font-size: 1.4rem; text-transform: uppercase; color: var(--text-main); }
+        .policy-body-scroll h3 { margin: 20px 0 8px; font-size: 1.05rem; font-weight: 700; color: var(--volt-accent); }
+        .policy-body-scroll p, .policy-body-scroll ul { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; }
+        .policy-body-scroll ul { padding-left: 20px; }
+
+        /* --- POLICY FOOTER --- */
+        footer {
+            background: var(--charcoal-main);
+            color: var(--text-main);
+            margin-top: 80px;
+            padding: 60px 24px 30px;
+            border-top: 1px solid var(--border-clean);
+        }
+
+        .footer-compliance-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border-clean);
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+        }
+
+        .footer-column p, .footer-column a {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .payment-gateway-strip {
+            display: flex;
+            gap: 12px;
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            margin-top: 14px;
+        }
+
+        .footer-legal-bar {
+            max-width: var(--max-width);
+            margin: 30px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .footer-policy-links button {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-left: 15px;
+        }
+
+        .footer-policy-links button:hover {
+            color: var(--volt-accent);
+            text-decoration: underline;
+        }
+
+        @media(max-width: 768px) {
+            .header-chassis { flex-wrap: wrap; }
+            .search-bracket { order: 3; max-width: 100%; width: 100%; }
+            .showroom-matrix { grid-template-columns: 1fr; }
+            .filter-sidebar { display: none; }
+            .asymmetric-split { grid-template-columns: 1fr; }
+            .hero-jumbotron { padding: 40px 24px; margin: 12px; }
+            .hero-statement h2 { font-size: 2rem; }
+            .form-row-split { grid-template-columns: 1fr; }
+            .footer-legal-bar { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="compliance-strip">
+        System Verification Node Active // Secure Global Logistics Core // Base Currency: USD ($)
+    </div>
+
+    <header>
+        <div class="header-chassis">
+            <a href="#" class="brand-logo" onclick="clearCatalogFilters()">aerogrid<span>kinetics</span></a>
+            
+            <div class="search-bracket">
+                <input type="text" id="storefrontSearchInput" placeholder="Search modular slings, storm jackets, kinetic pants..." onkeyup="processSearchKeyPress(event)">
+                <button class="search-execution-btn" onclick="executeMerchantInventoryPipeline()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="bag-trigger-btn" onclick="toggleCartDrawerState(true)">
+                <i class="fa-solid fa-crosshairs"></i>
+                <span class="bag-counter-badge" id="cartGlobalCountLabel">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-jumbotron">
+        <div class="hero-statement">
+            <h2>Modular Ergonomics<br><strong>& Urban Techwear</strong></h2>
+            <p>High-density hydrophobic weaves and articulation-mapped layers engineered for unlimited displacement vectors across industrial environments.</p>
+            <button class="btn-action" style="background: var(--volt-accent); border-color: var(--volt-accent); color: var(--charcoal-main);" onclick="scrollIntoShowroomView()">Deploy Gear Core</button>
+        </div>
+    </div>
+
+    <div class="showroom-matrix" id="showroomMatrixAnchor">
+        <div class="top-utility-shelf">
+            <div class="index-counter-label" id="pipelineQueryMetricsIndicator">Parsing terminal stock lists...</div>
+            <div>
+                <select id="priceSortSelectionDropdown" onchange="executeMerchantInventoryPipeline()">
+                    <option value="default">Sort: Chronological Registry</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="filter-sidebar">
+            <h3>System Shells</h3>
+            <label class="checkbox-row">
+                <input type="checkbox" value="Apparel" class="filter-pipeline-checkbox" onchange="executeMerchantInventoryPipeline()"> Kinetic Garments
+            </label>
+            <label class="checkbox-row">
+                <input type="checkbox" value="Modular" class="filter-pipeline-checkbox" onchange="executeMerchantInventoryPipeline()"> Adaptable Packs
+            </label>
+            <label class="checkbox-row">
+                <input type="checkbox" value="Hardware" class="filter-pipeline-checkbox" onchange="executeMerchantInventoryPipeline()"> Node Equipment
+            </label>
+        </div>
+
+        <main class="showroom-grid-container" id="showroomTargetInsertionGrid"></main>
+    </div>
+
+    <div class="drawer-overlay-mask" id="cartDrawerOverlayMask" onclick="toggleCartDrawerState(false)"></div>
+    <div class="sliding-cart-drawer" id="interactiveCartDrawerElement">
+        <div class="drawer-top-bar">
+            <h3 style="font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--volt-accent);">System Basket Staging</h3>
+            <button class="drawer-dismiss-btn" onclick="toggleCartDrawerState(false)">&times;</button>
+        </div>
+        
+        <div class="drawer-scroll-body">
+            <div id="cartLedgerLinesHook"></div>
+
+            <form id="checkoutIdentityPanel" class="checkout-identity-form" onsubmit="processSecureCheckoutSubmission(event)">
+                <div class="form-section-title">1. Logistics Profile Clearance</div>
+                <div class="input-group">
+                    <label>Comms Link (Email) *</label>
+                    <input type="email" required id="custEmail" placeholder="user@domain.net">
+                </div>
+                <div class="form-row-split">
+                    <div class="input-group">
+                        <label>Given Name *</label>
+                        <input type="text" required id="custFirst" placeholder="Logan">
+                    </div>
+                    <div class="input-group">
+                        <label>Surname *</label>
+                        <input type="text" required id="custLast" placeholder="Vance">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Secure Phone Node *</label>
+                    <input type="tel" required id="custPhone" placeholder="+1 (555) 234-5678">
+                </div>
+
+                <div class="form-section-title" style="margin-top:20px;">2. Geographic Destination Vectors</div>
+                <div class="input-group">
+                    <label>Transit Grid / Street Address *</label>
+                    <input type="text" required id="custStreet" placeholder="Building 7, Node Sector 12">
+                </div>
+                <div class="form-row-split">
+                    <div class="input-group">
+                        <label>City Hub *</label>
+                        <input type="text" required id="custCity" placeholder="Neo-Chicago">
+                    </div>
+                    <div class="input-group">
+                        <label>Routing Pin / Postal Code *</label>
+                        <input type="text" required id="custZip" placeholder="60611">
+                    </div>
+                </div>
+                <button type="submit" class="btn-action" style="width:100%; background:var(--volt-accent); border-color:var(--volt-accent); color: var(--charcoal-main); padding:12px;">Authorize Dispatch Sequence</button>
+            </form>
+        </div>
+
+        <div class="drawer-footer-block">
+            <div class="total-summary-row">
+                <span>Aggregated Value:</span>
+                <span id="cartCumulativeTotalLabel">$0.00</span>
+            </div>
+            <button id="cartExecutionPrimaryBtn" class="btn-action" style="width: 100%; padding: 14px; background: var(--text-main); color: var(--slate-base);" onclick="engageCheckoutPipeline()">Initialize Core Clearance</button>
+            <p style="font-size: 0.65rem; color: var(--text-muted); text-align: center; margin-top: 10px; text-transform: uppercase;"><i class="fa-solid fa-terminal"></i> Cryptographic Clearance Pipeline Intact</p>
+        </div>
+    </div>
+
+    <div class="modal-lightbox-chassis" id="quickViewLightboxModal" onclick="checkOutsideOverlayClick(event, 'quickViewLightboxModal')">
+        <div class="modal-inner-vault">
+            <div class="modal-top-bar">
+                <h3 id="modalProductNameHeader" style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--volt-accent);">Kinetic Structural Parameters</h3>
+                <button class="drawer-dismiss-btn" onclick="toggleLightboxDisplay('quickViewLightboxModal', false)">&times;</button>
+            </div>
+            <div class="modal-scroll-area">
+                <div class="asymmetric-split">
+                    <div class="modal-visual-frame" id="modalImageInsertionFrame"></div>
+                    <div>
+                        <div class="item-category" id="modalProductCategoryLabel">Shell</div>
+                        <p id="modalProductDescriptionText" style="margin: 12px 0; font-size:0.85rem; color:var(--text-muted);"></p>
+                        <div class="price-text" id="modalProductPriceTag" style="margin-bottom:18px; color: var(--volt-accent);">$0.00</div>
+                        <button class="btn-action" id="modalSubmitActionBtn" style="width:100%; background: var(--volt-accent); border-color: var(--volt-accent); color: var(--charcoal-main);">Commit To Basket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="policy-overlay-mask" id="globalPolicyOverlayModal" onclick="checkOutsidePolicyClick(event)">
+        <div class="policy-modal-box">
+            <div class="modal-top-bar" style="background: var(--charcoal-main);">
+                <span style="font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.5px; color:var(--volt-accent);"><i class="fa-solid fa-shield"></i> Structural Protocol Bureau</span>
+                <button class="drawer-dismiss-btn" onclick="togglePolicyModal(null, false)">&times;</button>
+            </div>
+            <div class="policy-body-scroll" id="policyHTMLTargetPayloadFrame"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-compliance-grid">
+            <div class="footer-column">
+                <h4>System Comms Interface</h4>
+                <p><i class="fa-solid fa-envelope"></i> kinetics@aerogrid-demo.net</p>
+                <p><i class="fa-solid fa-network-wired"></i> Queue SLA Response: Under 24 Cycles</p>
+                <p><i class="fa-solid fa-microchip"></i> AeroGrid Systems Corp, Suite 904 Cyber Dr</p>
+            </div>
+            <div class="footer-column">
+                <h4>Displacement Logistics</h4>
+                <p>Tracking registries distribute programmatically to specified user communication profiles immediately when geographic destination values pass screening matrices.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Network Settling</h4>
+                <p>Direct isolated transactional clearing arrays with international financial settlement lanes.</p>
+                <div class="payment-gateway-strip">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-legal-bar">
+            <div>&copy; 2026 AeroGrid Kinetics LLC. Core Matrix Operational.</div>
+            <div class="footer-policy-links">
+                <a href="about.html" style="text-decoration: none;">About us</a>
+                <button onclick="togglePolicyModal('privacy')">Privacy Policy</button>
+                <button onclick="togglePolicyModal('terms')">Terms of Service</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const storeInventoryDatabase = [
+            { id: 901, title: "X-Pac Modular Crossbody Sling Bag", price: 110.00, category: "Modular", img: "https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=600&auto=format&fit=crop&q=80", desc: "Constructed with multi-layered X-Pac laminate sailcloth and equipped with high-tensile FIDLOCK magnetic fastening points.", badge: "Hardware Upgrade" },
+            { id: 902, title: "Hydrophobic Articulated Storm Jacket", price: 245.00, category: "Apparel", img: "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=600&auto=format&fit=crop&q=80", desc: "Features laser-cut ventilation ports, completely taped structural seams, and an adjustable dimensional drop hood layout.", badge: "Maximum Shell" },
+            { id: 903, title: "Cargo Technical Cargo Pants", price: 135.00, category: "Apparel", img: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&auto=format&fit=crop&q=80", desc: "Composed of abrasion-resistant four-way stretch memory textiles with modular zipper drop-pockets.", badge: null },
+            { id: 904, title: "Anodized Aluminum Key-Grid Clip", price: 38.00, category: "Hardware", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80", desc: "Machined CNC aerospace-grade aluminum utility platform carrying spring-loaded security gates and quick-release loops.", badge: "New Deployment" }
+        ];
+
+        const complianceTextVault = {
+            privacy: `<h2>Privacy Operations Framework</h2><p><strong>Operational Cycle:</strong> 2026</p><h3>1. Logistics Variable Harvesting</h3><p>To safely settle trade activities, AeroGrid Kinetics demands real-time logging of parameters entered into checkout sequences: Client communications, physical delivery addresses, names, and contact nodes.</p><h3>2. Encryption Configurations</h3><p>Data packets route over isolated secure transmission grids utilizing standard SSL cryptographic masks to limit footprint leaking outside tracking logs.</p><h3>3. Automated Cookies</h3><p>Standard data telemetry logs operational steps automatically to satisfy web indexing and search placement criteria.</p>`,
+            terms: `<h2>Terms of System Utilization</h2><p><strong>Operational Cycle:</strong> 2026</p><h3>1. Parameter Validity Mandate</h3><p>Users initializing checkout panels must pass true and valid identities. Spoofed, blank, or corrupted routing definitions evoke immediate systematic holds on product fulfillment processes.</p><h3>2. Financial Discharges</h3><p>All currency parameters resolve uniformly via <strong>United States Dollars (USD)</strong>. Erroneous delivery executions caused by user submission mistakes are solely the responsibility of the client platform.</p>`
+        };
+
+        let interactiveUserCartArray = [];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            populateMerchantShowroom(storeInventoryDatabase);
+        });
+
+        function scrollIntoShowroomView() {
+            document.getElementById('showroomMatrixAnchor').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function processSearchKeyPress(e) {
+            if(e.key === 'Enter') {
+                executeMerchantInventoryPipeline();
+                scrollIntoShowroomView();
+            }
+        }
+
+        function clearCatalogFilters() {
+            document.getElementById('storefrontSearchInput').value = '';
+            document.querySelectorAll('.filter-pipeline-checkbox').forEach(box => box.checked = false);
+            document.getElementById('priceSortSelectionDropdown').value = 'default';
+            executeMerchantInventoryPipeline();
+        }
+
+        function executeMerchantInventoryPipeline() {
+            let processedResultSet = [...storeInventoryDatabase];
+            const rawQueryText = document.getElementById('storefrontSearchInput').value.toLowerCase().trim();
+            if(rawQueryText !== "") {
+                processedResultSet = processedResultSet.filter(element => 
+                    element.title.toLowerCase().includes(rawQueryText) || 
+                    element.desc.toLowerCase().includes(rawQueryText) || 
+                    element.category.toLowerCase().includes(rawQueryText)
+                );
+            }
+
+            const checkedCategoryNodes = document.querySelectorAll('.filter-pipeline-checkbox:checked');
+            if(checkedCategoryNodes.length > 0) {
+                const queryConditions = Array.from(checkedCategoryNodes).map(node => node.value);
+                processedResultSet = processedResultSet.filter(element => queryConditions.includes(element.category));
+            }
+
+            const sequenceParameter = document.getElementById('priceSortSelectionDropdown').value;
+            if(sequenceParameter === 'low-high') {
+                processedResultSet.sort((a, b) => a.price - b.price);
+            } else if(sequenceParameter === 'high-low') {
+                processedResultSet.sort((a, b) => b.price - a.price);
+            }
+
+            populateMerchantShowroom(processedResultSet);
+        }
+
+        function populateMerchantShowroom(elements) {
+            const viewportGrid = document.getElementById('showroomTargetInsertionGrid');
+            const metricsLabel = document.getElementById('pipelineQueryMetricsIndicator');
+            viewportGrid.innerHTML = '';
+
+            metricsLabel.textContent = `Displaying ${elements.length} Allocation Profiles`;
+
+            if(elements.length === 0) {
+                viewportGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:80px 0; color:var(--text-muted); font-size:0.9rem;">[No data points found matching active terminal search variables]</div>`;
+                return;
+            }
+
+            elements.forEach(product => {
+                const productCardDiv = document.createElement('div');
+                productCardDiv.className = 'item-card';
+                productCardDiv.innerHTML = `
+                    ${product.badge ? `<span class="ribbon-tag">${product.badge}</span>` : ''}
+                    <div class="media-box" onclick="triggerQuickViewLightbox(${product.id})">
+                        <img src="${product.img}" alt="aerogrid_kinetics_hardware">
+                    </div>
+                    <div class="item-category">// MATRIX: ${product.category}</div>
+                    <div class="item-title" onclick="triggerQuickViewLightbox(${product.id})">${product.title}</div>
+                    <div class="item-footer">
+                        <span class="price-text" style="color: var(--volt-accent);">$${product.price.toFixed(2)}</span>
+                        <button class="btn-action" onclick="stageProductInCart(${product.id})">Acquire Core</button>
+                    </div>
+                `;
+                viewportGrid.appendChild(productCardDiv);
+            });
+        }
+
+        function triggerQuickViewLightbox(id) {
+            const dataItem = storeInventoryDatabase.find(x => x.id === id);
+            if(!dataItem) return;
+
+            document.getElementById('modalProductNameHeader').textContent = `GEAR ID // TRACE: AG-${dataItem.id}`;
+            document.getElementById('modalProductCategoryLabel').textContent = `SYSTEM LAYER: ${dataItem.category}`;
+            document.getElementById('modalProductDescriptionText').textContent = dataItem.desc;
+            document.getElementById('modalProductPriceTag').textContent = `$${dataItem.price.toFixed(2)}`;
+            document.getElementById('modalImageInsertionFrame').innerHTML = `<img src="${dataItem.img}" alt="modal_element_render">`;
+
+            const operationalSubmitBtn = document.getElementById('modalSubmitActionBtn');
+            operationalSubmitBtn.onclick = () => {
+                stageProductInCart(dataItem.id);
+                toggleLightboxDisplay('quickViewLightboxModal', false);
+            };
+
+            toggleLightboxDisplay('quickViewLightboxModal', true);
+        }
+
+        function toggleLightboxDisplay(id, visible) {
+            document.getElementById(id).style.display = visible ? 'flex' : 'none';
+        }
+
+        function checkOutsideOverlayClick(e, id) {
+            if(e.target === document.getElementById(id)) {
+                toggleLightboxDisplay(id, false);
+            }
+        }
+
+        function toggleCartDrawerState(open) {
+            const sidePanel = document.getElementById('interactiveCartDrawerElement');
+            const shroudMask = document.getElementById('cartDrawerOverlayMask');
+            if(open) {
+                sidePanel.classList.add('active');
+                shroudMask.style.display = 'block';
+            } else {
+                sidePanel.classList.remove('active');
+                shroudMask.style.display = 'none';
+                resetCheckoutFormState();
+            }
+        }
+
+        function stageProductInCart(id) {
+            const targetedAsset = storeInventoryDatabase.find(p => p.id === id);
+            interactiveUserCartArray.push(targetedAsset);
+            recalculateCartLedgerDOM();
+            toggleCartDrawerState(true);
+        }
+
+        function dropIndexFromCartLedger(index) {
+            interactiveUserCartArray.splice(index, 1);
+            recalculateCartLedgerDOM();
+        }
+
+        function recalculateCartLedgerDOM() {
+            document.getElementById('cartGlobalCountLabel').textContent = interactiveUserCartArray.length;
+            const contextHook = document.getElementById('cartLedgerLinesHook');
+            const aggregateSumLabel = document.getElementById('cartCumulativeTotalLabel');
+            contextHook.innerHTML = '';
+
+            if(interactiveUserCartArray.length === 0) {
+                contextHook.innerHTML = `<p style="text-align:center; color:var(--text-muted); font-size:0.85rem; padding-top:40px;">[Staging basket unpopulated]</p>`;
+                aggregateSumLabel.textContent = "$0.00";
+                resetCheckoutFormState();
+                return;
+            }
+
+            let rollingValuationAccumulator = 0;
+            interactiveUserCartArray.forEach((item, index) => {
+                rollingValuationAccumulator += item.price;
+                const nodeLineRow = document.createElement('div');
+                nodeLineRow.className = 'ledger-line-item';
+                nodeLineRow.innerHTML = `
+                    <div class="ledger-thumbnail"><img src="${item.img}"></div>
+                    <div class="ledger-info-block">
+                        <div class="ledger-title">${item.title}</div>
+                        <div class="ledger-cost">$${item.price.toFixed(2)}</div>
+                    </div>
+                    <button class="ledger-remove-action" onclick="dropIndexFromCartLedger(${index})"><i class="fa-solid fa-square-xmark"></i></button>
+                `;
+                contextHook.appendChild(nodeLineRow);
+            });
+
+            aggregateSumLabel.textContent = `$${rollingValuationAccumulator.toFixed(2)}`;
+        }
+
+        function engageCheckoutPipeline() {
+            if(interactiveUserCartArray.length === 0) {
+                alert("Staging environment empty. Add core hardware to clear.");
+                return;
+            }
+            document.getElementById('checkoutIdentityPanel').classList.add('active');
+            const primaryBtn = document.getElementById('cartExecutionPrimaryBtn');
+            primaryBtn.style.display = 'none';
+            document.getElementById('cartLedgerLinesHook').style.display = 'none';
+        }
+
+        function resetCheckoutFormState() {
+            document.getElementById('checkoutIdentityPanel').classList.remove('active');
+            document.getElementById('checkoutIdentityPanel').reset();
+            document.getElementById('cartExecutionPrimaryBtn').style.display = 'block';
+            document.getElementById('cartLedgerLinesHook').style.display = 'block';
+        }
+
+        function processSecureCheckoutSubmission(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('custEmail').value;
+            const firstName = document.getElementById('custFirst').value;
+            const lastName = document.getElementById('custLast').value;
+            const phone = document.getElementById('custPhone').value;
+            const city = document.getElementById('custCity').value;
+
+            console.log("Transmitting Cleared Dataset:", {
+                customer: { firstName, lastName, email, phone },
+                cores: interactiveUserCartArray
+            });
+
+            alert(`System Dispatch Clearance Verified!\n\nParameters Accepted, ${firstName} ${lastName}.\nHardware modules have been allocated to the transit registry heading to Hub ${city}.`);
+            
+            interactiveUserCartArray = [];
+            recalculateCartLedgerDOM();
+            toggleCartDrawerState(false);
+        }
+
+        function togglePolicyModal(type, show = true) {
+            const targetContainer = document.getElementById('globalPolicyOverlayModal');
+            const displayFrame = document.getElementById('policyHTMLTargetPayloadFrame');
+            if(show && complianceTextVault[type]) {
+                displayFrame.innerHTML = complianceTextVault[type];
+                targetContainer.style.display = 'flex';
+            } else {
+                targetContainer.style.display = 'none';
+            }
+        }
+
+        function checkOutsidePolicyClick(e) {
+            if(e.target === document.getElementById('globalPolicyOverlayModal')) {
+                togglePolicyModal(null, false);
+            }
+        }
+    </script>
+</body>
+</html>
